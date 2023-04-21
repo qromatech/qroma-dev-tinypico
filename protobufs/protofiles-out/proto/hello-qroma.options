@@ -1,0 +1,5 @@
+QromaHeartbeatUpdate.heartbeatMessage  max_size:100  fixed_length: true
+
+HelloQromaRequest.name  max_size:20  fixed_length:true
+
+HelloQromaResponse.response  max_size: 30  fixed_length: true
