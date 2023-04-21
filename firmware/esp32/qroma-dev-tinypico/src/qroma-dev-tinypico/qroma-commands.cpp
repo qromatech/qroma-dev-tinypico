@@ -12,3 +12,7 @@ void onHelloQroma(HelloQromaRequest * message, HelloQromaResponse * hqr) {
   hqr->callCount = helloQromaCallCount;
   hqr->nameLength = strnlen(message->name, sizeof(HelloQromaRequest::name));
 }
+
+void onColorChange(SetColorRequest * message) {
+  
+}

@@ -23,6 +23,10 @@ void qromaProjectSetup()
     config->txBufferSize = 1000;
   }, &myQromaApp);
 
+  registerPbCommandFunction<
+    SetColorRequest, SetColorRequest_fields
+  >(onColorChange, &myQromaApp);
+
   startupQroma(&myQromaApp);
 }
 
