@@ -121,6 +121,81 @@ class HelloQromaRequest extends $pb.GeneratedMessage {
   void clearName() => clearField(1);
 }
 
+class SetColorRequest extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'SetColorRequest', createEmptyInstance: create)
+    ..a<$core.int>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'red', $pb.PbFieldType.OU3)
+    ..a<$core.int>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'green', $pb.PbFieldType.OU3)
+    ..a<$core.int>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'blue', $pb.PbFieldType.OU3)
+    ..hasRequiredFields = false
+  ;
+
+  SetColorRequest._() : super();
+  factory SetColorRequest({
+    $core.int? red,
+    $core.int? green,
+    $core.int? blue,
+  }) {
+    final _result = create();
+    if (red != null) {
+      _result.red = red;
+    }
+    if (green != null) {
+      _result.green = green;
+    }
+    if (blue != null) {
+      _result.blue = blue;
+    }
+    return _result;
+  }
+  factory SetColorRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory SetColorRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  SetColorRequest clone() => SetColorRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  SetColorRequest copyWith(void Function(SetColorRequest) updates) => super.copyWith((message) => updates(message as SetColorRequest)) as SetColorRequest; // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static SetColorRequest create() => SetColorRequest._();
+  SetColorRequest createEmptyInstance() => create();
+  static $pb.PbList<SetColorRequest> createRepeated() => $pb.PbList<SetColorRequest>();
+  @$core.pragma('dart2js:noInline')
+  static SetColorRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SetColorRequest>(create);
+  static SetColorRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.int get red => $_getIZ(0);
+  @$pb.TagNumber(1)
+  set red($core.int v) { $_setUnsignedInt32(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasRed() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearRed() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.int get green => $_getIZ(1);
+  @$pb.TagNumber(2)
+  set green($core.int v) { $_setUnsignedInt32(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasGreen() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearGreen() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.int get blue => $_getIZ(2);
+  @$pb.TagNumber(3)
+  set blue($core.int v) { $_setUnsignedInt32(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasBlue() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearBlue() => clearField(3);
+}
+
 class HelloQromaResponse extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'HelloQromaResponse', createEmptyInstance: create)
     ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'response')

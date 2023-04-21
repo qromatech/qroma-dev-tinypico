@@ -42,6 +42,18 @@ const HelloQromaRequest$json = const {
 
 /// Descriptor for `HelloQromaRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List helloQromaRequestDescriptor = $convert.base64Decode('ChFIZWxsb1Fyb21hUmVxdWVzdBISCgRuYW1lGAEgASgJUgRuYW1l');
+@$core.Deprecated('Use setColorRequestDescriptor instead')
+const SetColorRequest$json = const {
+  '1': 'SetColorRequest',
+  '2': const [
+    const {'1': 'red', '3': 1, '4': 1, '5': 13, '10': 'red'},
+    const {'1': 'green', '3': 2, '4': 1, '5': 13, '10': 'green'},
+    const {'1': 'blue', '3': 3, '4': 1, '5': 13, '10': 'blue'},
+  ],
+};
+
+/// Descriptor for `SetColorRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List setColorRequestDescriptor = $convert.base64Decode('Cg9TZXRDb2xvclJlcXVlc3QSEAoDcmVkGAEgASgNUgNyZWQSFAoFZ3JlZW4YAiABKA1SBWdyZWVuEhIKBGJsdWUYAyABKA1SBGJsdWU=');
 @$core.Deprecated('Use helloQromaResponseDescriptor instead')
 const HelloQromaResponse$json = const {
   '1': 'HelloQromaResponse',

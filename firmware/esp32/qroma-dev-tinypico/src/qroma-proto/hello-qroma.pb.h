@@ -52,6 +52,12 @@ typedef struct _QromaHeartbeatUpdate {
     uint32_t uptime; 
 } QromaHeartbeatUpdate;
 
+typedef struct _SetColorRequest { 
+    uint32_t red; 
+    uint32_t green; 
+    uint32_t blue; 
+} SetColorRequest;
+
 typedef struct _MathResponse { 
     pb_size_t which_response;
     union {
@@ -75,6 +81,7 @@ extern "C" {
 /* Initializer values for message structs */
 #define QromaHeartbeatUpdate_init_default        {"", 0}
 #define HelloQromaRequest_init_default           {""}
+#define SetColorRequest_init_default             {0, 0, 0}
 #define HelloQromaResponse_init_default          {"", 0, 0}
 #define MathRequest_init_default                 {0, 0, _MathOperation_MIN}
 #define MathResult_Add_init_default              {0}
@@ -83,6 +90,7 @@ extern "C" {
 #define MathResponse_init_default                {0, {MathResult_Add_init_default}}
 #define QromaHeartbeatUpdate_init_zero           {"", 0}
 #define HelloQromaRequest_init_zero              {""}
+#define SetColorRequest_init_zero                {0, 0, 0}
 #define HelloQromaResponse_init_zero             {"", 0, 0}
 #define MathRequest_init_zero                    {0, 0, _MathOperation_MIN}
 #define MathResult_Add_init_zero                 {0}
@@ -104,6 +112,9 @@ extern "C" {
 #define MathResult_Subtract_result_tag           1
 #define QromaHeartbeatUpdate_heartbeatMessage_tag 1
 #define QromaHeartbeatUpdate_uptime_tag          2
+#define SetColorRequest_red_tag                  1
+#define SetColorRequest_green_tag                2
+#define SetColorRequest_blue_tag                 3
 #define MathResponse_addResult_tag               1
 #define MathResponse_subtractResult_tag          2
 #define MathResponse_addAndSubtractResult_tag    3
@@ -119,6 +130,13 @@ X(a, STATIC,   SINGULAR, UINT32,   uptime,            2)
 X(a, STATIC,   SINGULAR, STRING,   name,              1)
 #define HelloQromaRequest_CALLBACK NULL
 #define HelloQromaRequest_DEFAULT NULL
+
+#define SetColorRequest_FIELDLIST(X, a) \
+X(a, STATIC,   SINGULAR, UINT32,   red,               1) \
+X(a, STATIC,   SINGULAR, UINT32,   green,             2) \
+X(a, STATIC,   SINGULAR, UINT32,   blue,              3)
+#define SetColorRequest_CALLBACK NULL
+#define SetColorRequest_DEFAULT NULL
 
 #define HelloQromaResponse_FIELDLIST(X, a) \
 X(a, STATIC,   SINGULAR, STRING,   response,          1) \
@@ -162,6 +180,7 @@ X(a, STATIC,   ONEOF,    MESSAGE,  (response,addAndSubtractResult,response.addAn
 
 extern const pb_msgdesc_t QromaHeartbeatUpdate_msg;
 extern const pb_msgdesc_t HelloQromaRequest_msg;
+extern const pb_msgdesc_t SetColorRequest_msg;
 extern const pb_msgdesc_t HelloQromaResponse_msg;
 extern const pb_msgdesc_t MathRequest_msg;
 extern const pb_msgdesc_t MathResult_Add_msg;
@@ -172,6 +191,7 @@ extern const pb_msgdesc_t MathResponse_msg;
 /* Defines for backwards compatibility with code written before nanopb-0.4.0 */
 #define QromaHeartbeatUpdate_fields &QromaHeartbeatUpdate_msg
 #define HelloQromaRequest_fields &HelloQromaRequest_msg
+#define SetColorRequest_fields &SetColorRequest_msg
 #define HelloQromaResponse_fields &HelloQromaResponse_msg
 #define MathRequest_fields &MathRequest_msg
 #define MathResult_Add_fields &MathResult_Add_msg
@@ -188,6 +208,7 @@ extern const pb_msgdesc_t MathResponse_msg;
 #define MathResult_Add_size                      6
 #define MathResult_Subtract_size                 6
 #define QromaHeartbeatUpdate_size                107
+#define SetColorRequest_size                     18
 
 #ifdef __cplusplus
 } /* extern "C" */

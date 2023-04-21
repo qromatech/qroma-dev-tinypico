@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x11hello-qroma.proto\"@\n\x14QromaHeartbeatUpdate\x12\x18\n\x10heartbeatMessage\x18\x01 \x01(\t\x12\x0e\n\x06uptime\x18\x02 \x01(\r\"!\n\x11HelloQromaRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\"M\n\x12HelloQromaResponse\x12\x10\n\x08response\x18\x01 \x01(\t\x12\x11\n\tcallCount\x18\x02 \x01(\r\x12\x12\n\nnameLength\x18\x03 \x01(\r\"?\n\x0bMathRequest\x12\t\n\x01\x61\x18\x01 \x01(\r\x12\t\n\x01\x62\x18\x02 \x01(\r\x12\x1a\n\x02op\x18\x03 \x01(\x0e\x32\x0e.MathOperation\" \n\x0eMathResult_Add\x12\x0e\n\x06result\x18\x01 \x01(\r\"%\n\x13MathResult_Subtract\x12\x0e\n\x06result\x18\x01 \x01(\r\"F\n\x19MathResult_AddAndSubtract\x12\x11\n\taddResult\x18\x01 \x01(\r\x12\x16\n\x0esubtractResult\x18\x02 \x01(\r\"\xac\x01\n\x0cMathResponse\x12$\n\taddResult\x18\x01 \x01(\x0b\x32\x0f.MathResult_AddH\x00\x12.\n\x0esubtractResult\x18\x02 \x01(\x0b\x32\x14.MathResult_SubtractH\x00\x12:\n\x14\x61\x64\x64\x41ndSubtractResult\x18\x03 \x01(\x0b\x32\x1a.MathResult_AddAndSubtractH\x00\x42\n\n\x08response*d\n\rMathOperation\x12\x11\n\rMathOp_NotSet\x10\x00\x12\x0e\n\nMathOp_Add\x10\x01\x12\x13\n\x0fMathOp_Subtract\x10\x02\x12\x1b\n\x17MathOp_Add_And_Subtract\x10\x03\x62\x06proto3'
+  serialized_pb=b'\n\x11hello-qroma.proto\"@\n\x14QromaHeartbeatUpdate\x12\x18\n\x10heartbeatMessage\x18\x01 \x01(\t\x12\x0e\n\x06uptime\x18\x02 \x01(\r\"!\n\x11HelloQromaRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\";\n\x0fSetColorRequest\x12\x0b\n\x03red\x18\x01 \x01(\r\x12\r\n\x05green\x18\x02 \x01(\r\x12\x0c\n\x04\x62lue\x18\x03 \x01(\r\"M\n\x12HelloQromaResponse\x12\x10\n\x08response\x18\x01 \x01(\t\x12\x11\n\tcallCount\x18\x02 \x01(\r\x12\x12\n\nnameLength\x18\x03 \x01(\r\"?\n\x0bMathRequest\x12\t\n\x01\x61\x18\x01 \x01(\r\x12\t\n\x01\x62\x18\x02 \x01(\r\x12\x1a\n\x02op\x18\x03 \x01(\x0e\x32\x0e.MathOperation\" \n\x0eMathResult_Add\x12\x0e\n\x06result\x18\x01 \x01(\r\"%\n\x13MathResult_Subtract\x12\x0e\n\x06result\x18\x01 \x01(\r\"F\n\x19MathResult_AddAndSubtract\x12\x11\n\taddResult\x18\x01 \x01(\r\x12\x16\n\x0esubtractResult\x18\x02 \x01(\r\"\xac\x01\n\x0cMathResponse\x12$\n\taddResult\x18\x01 \x01(\x0b\x32\x0f.MathResult_AddH\x00\x12.\n\x0esubtractResult\x18\x02 \x01(\x0b\x32\x14.MathResult_SubtractH\x00\x12:\n\x14\x61\x64\x64\x41ndSubtractResult\x18\x03 \x01(\x0b\x32\x1a.MathResult_AddAndSubtractH\x00\x42\n\n\x08response*d\n\rMathOperation\x12\x11\n\rMathOp_NotSet\x10\x00\x12\x0e\n\nMathOp_Add\x10\x01\x12\x13\n\x0fMathOp_Subtract\x10\x02\x12\x1b\n\x17MathOp_Add_And_Subtract\x10\x03\x62\x06proto3'
 )
 
 _MATHOPERATION = _descriptor.EnumDescriptor(
@@ -53,8 +53,8 @@ _MATHOPERATION = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=586,
-  serialized_end=686,
+  serialized_start=647,
+  serialized_end=747,
 )
 _sym_db.RegisterEnumDescriptor(_MATHOPERATION)
 
@@ -137,6 +137,52 @@ _HELLOQROMAREQUEST = _descriptor.Descriptor(
 )
 
 
+_SETCOLORREQUEST = _descriptor.Descriptor(
+  name='SetColorRequest',
+  full_name='SetColorRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='red', full_name='SetColorRequest.red', index=0,
+      number=1, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='green', full_name='SetColorRequest.green', index=1,
+      number=2, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='blue', full_name='SetColorRequest.blue', index=2,
+      number=3, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=122,
+  serialized_end=181,
+)
+
+
 _HELLOQROMARESPONSE = _descriptor.Descriptor(
   name='HelloQromaResponse',
   full_name='HelloQromaResponse',
@@ -178,8 +224,8 @@ _HELLOQROMARESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=122,
-  serialized_end=199,
+  serialized_start=183,
+  serialized_end=260,
 )
 
 
@@ -224,8 +270,8 @@ _MATHREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=201,
-  serialized_end=264,
+  serialized_start=262,
+  serialized_end=325,
 )
 
 
@@ -256,8 +302,8 @@ _MATHRESULT_ADD = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=266,
-  serialized_end=298,
+  serialized_start=327,
+  serialized_end=359,
 )
 
 
@@ -288,8 +334,8 @@ _MATHRESULT_SUBTRACT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=300,
-  serialized_end=337,
+  serialized_start=361,
+  serialized_end=398,
 )
 
 
@@ -327,8 +373,8 @@ _MATHRESULT_ADDANDSUBTRACT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=339,
-  serialized_end=409,
+  serialized_start=400,
+  serialized_end=470,
 )
 
 
@@ -378,8 +424,8 @@ _MATHRESPONSE = _descriptor.Descriptor(
       create_key=_descriptor._internal_create_key,
     fields=[]),
   ],
-  serialized_start=412,
-  serialized_end=584,
+  serialized_start=473,
+  serialized_end=645,
 )
 
 _MATHREQUEST.fields_by_name['op'].enum_type = _MATHOPERATION
@@ -397,6 +443,7 @@ _MATHRESPONSE.oneofs_by_name['response'].fields.append(
 _MATHRESPONSE.fields_by_name['addAndSubtractResult'].containing_oneof = _MATHRESPONSE.oneofs_by_name['response']
 DESCRIPTOR.message_types_by_name['QromaHeartbeatUpdate'] = _QROMAHEARTBEATUPDATE
 DESCRIPTOR.message_types_by_name['HelloQromaRequest'] = _HELLOQROMAREQUEST
+DESCRIPTOR.message_types_by_name['SetColorRequest'] = _SETCOLORREQUEST
 DESCRIPTOR.message_types_by_name['HelloQromaResponse'] = _HELLOQROMARESPONSE
 DESCRIPTOR.message_types_by_name['MathRequest'] = _MATHREQUEST
 DESCRIPTOR.message_types_by_name['MathResult_Add'] = _MATHRESULT_ADD
@@ -419,6 +466,13 @@ HelloQromaRequest = _reflection.GeneratedProtocolMessageType('HelloQromaRequest'
   # @@protoc_insertion_point(class_scope:HelloQromaRequest)
   })
 _sym_db.RegisterMessage(HelloQromaRequest)
+
+SetColorRequest = _reflection.GeneratedProtocolMessageType('SetColorRequest', (_message.Message,), {
+  'DESCRIPTOR' : _SETCOLORREQUEST,
+  '__module__' : 'hello_qroma_pb2'
+  # @@protoc_insertion_point(class_scope:SetColorRequest)
+  })
+_sym_db.RegisterMessage(SetColorRequest)
 
 HelloQromaResponse = _reflection.GeneratedProtocolMessageType('HelloQromaResponse', (_message.Message,), {
   'DESCRIPTOR' : _HELLOQROMARESPONSE,

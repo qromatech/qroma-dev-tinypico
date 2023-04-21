@@ -12,6 +12,9 @@ PB_BIND(QromaHeartbeatUpdate, QromaHeartbeatUpdate, AUTO)
 PB_BIND(HelloQromaRequest, HelloQromaRequest, AUTO)
 
 
+PB_BIND(SetColorRequest, SetColorRequest, AUTO)
+
+
 PB_BIND(HelloQromaResponse, HelloQromaResponse, AUTO)
 
 

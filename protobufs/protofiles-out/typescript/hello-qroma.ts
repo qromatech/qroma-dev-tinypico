@@ -34,6 +34,23 @@ export interface HelloQromaRequest {
     name: string;
 }
 /**
+ * @generated from protobuf message SetColorRequest
+ */
+export interface SetColorRequest {
+    /**
+     * @generated from protobuf field: uint32 red = 1;
+     */
+    red: number;
+    /**
+     * @generated from protobuf field: uint32 green = 2;
+     */
+    green: number;
+    /**
+     * @generated from protobuf field: uint32 blue = 3;
+     */
+    blue: number;
+}
+/**
  * @generated from protobuf message HelloQromaResponse
  */
 export interface HelloQromaResponse {
@@ -249,6 +266,67 @@ class HelloQromaRequest$Type extends MessageType<HelloQromaRequest> {
  * @generated MessageType for protobuf message HelloQromaRequest
  */
 export const HelloQromaRequest = new HelloQromaRequest$Type();
+// @generated message type with reflection information, may provide speed optimized methods
+class SetColorRequest$Type extends MessageType<SetColorRequest> {
+    constructor() {
+        super("SetColorRequest", [
+            { no: 1, name: "red", kind: "scalar", T: 13 /*ScalarType.UINT32*/ },
+            { no: 2, name: "green", kind: "scalar", T: 13 /*ScalarType.UINT32*/ },
+            { no: 3, name: "blue", kind: "scalar", T: 13 /*ScalarType.UINT32*/ }
+        ]);
+    }
+    create(value?: PartialMessage<SetColorRequest>): SetColorRequest {
+        const message = { red: 0, green: 0, blue: 0 };
+        globalThis.Object.defineProperty(message, MESSAGE_TYPE, { enumerable: false, value: this });
+        if (value !== undefined)
+            reflectionMergePartial<SetColorRequest>(this, message, value);
+        return message;
+    }
+    internalBinaryRead(reader: IBinaryReader, length: number, options: BinaryReadOptions, target?: SetColorRequest): SetColorRequest {
+        let message = target ?? this.create(), end = reader.pos + length;
+        while (reader.pos < end) {
+            let [fieldNo, wireType] = reader.tag();
+            switch (fieldNo) {
+                case /* uint32 red */ 1:
+                    message.red = reader.uint32();
+                    break;
+                case /* uint32 green */ 2:
+                    message.green = reader.uint32();
+                    break;
+                case /* uint32 blue */ 3:
+                    message.blue = reader.uint32();
+                    break;
+                default:
+                    let u = options.readUnknownField;
+                    if (u === "throw")
+                        throw new globalThis.Error(`Unknown field ${fieldNo} (wire type ${wireType}) for ${this.typeName}`);
+                    let d = reader.skip(wireType);
+                    if (u !== false)
+                        (u === true ? UnknownFieldHandler.onRead : u)(this.typeName, message, fieldNo, wireType, d);
+            }
+        }
+        return message;
+    }
+    internalBinaryWrite(message: SetColorRequest, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
+        /* uint32 red = 1; */
+        if (message.red !== 0)
+            writer.tag(1, WireType.Varint).uint32(message.red);
+        /* uint32 green = 2; */
+        if (message.green !== 0)
+            writer.tag(2, WireType.Varint).uint32(message.green);
+        /* uint32 blue = 3; */
+        if (message.blue !== 0)
+            writer.tag(3, WireType.Varint).uint32(message.blue);
+        let u = options.writeUnknownFields;
+        if (u !== false)
+            (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
+        return writer;
+    }
+}
+/**
+ * @generated MessageType for protobuf message SetColorRequest
+ */
+export const SetColorRequest = new SetColorRequest$Type();
 // @generated message type with reflection information, may provide speed optimized methods
 class HelloQromaResponse$Type extends MessageType<HelloQromaResponse> {
     constructor() {
