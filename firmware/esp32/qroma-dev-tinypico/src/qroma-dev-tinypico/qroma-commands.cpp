@@ -1,9 +1,10 @@
 #include "qroma-commands.h"
+#include "qroma/util/logger.h"
 #include <TinyPICO.h>
 
 uint32_t helloQromaCallCount = 0;
 
-TinyPICO tinyPico;
+TinyPICO tinyPico = TinyPICO();
 
 void onHelloQroma(HelloQromaRequest * message, HelloQromaResponse * hqr) {
   helloQromaCallCount++;
@@ -18,4 +19,8 @@ void onHelloQroma(HelloQromaRequest * message, HelloQromaResponse * hqr) {
 
 void onColorChange(SetColorRequest * message) {
   tinyPico.DotStar_SetPixelColor(message->red, message->green, message->blue);
+  logInfo("SETTING COLOR");
+  logInfo(message->red);
+  logInfo(message->green);
+  logInfo(message->blue);
 }

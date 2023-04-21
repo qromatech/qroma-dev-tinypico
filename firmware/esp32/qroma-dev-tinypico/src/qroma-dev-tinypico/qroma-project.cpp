@@ -8,13 +8,14 @@ QromaSerialCommApp myQromaApp;
 
 void qromaProjectSetup()
 {
-  registerPbCommandFunction<
-    HelloQromaRequest, HelloQromaRequest_fields,
-    HelloQromaResponse, HelloQromaResponse_fields
-  >(onHelloQroma, &myQromaApp);
+  // registerPbCommandFunction<
+  //   HelloQromaRequest, HelloQromaRequest_fields,
+  //   HelloQromaResponse, HelloQromaResponse_fields
+  // >(onHelloQroma, &myQromaApp);
 
   configureQromaApp([](QromaAppConfig * config) {
-    config->loggerConfig.logLevel = Qroma_LogLevel_LogLevel_Error;
+    // config->loggerConfig.logLevel = Qroma_LogLevel_LogLevel_Error;
+    config->loggerConfig.logLevel = Qroma_LogLevel_LogLevel_Info;
   }, &myQromaApp);
 
   configureSerialCommIo([](QromaCommSerialIoConfig * config) {
@@ -40,16 +41,16 @@ int counter = 0;
 
 void qromaHeartbeatUpdateLoop()
 {
-  auto qhb = QromaHeartbeatUpdate();
+  // auto qhb = QromaHeartbeatUpdate();
 
-  char tickBuffer[10];
-  itoa(counter, tickBuffer, 10);
-  counter++;
+  // char tickBuffer[10];
+  // itoa(counter, tickBuffer, 10);
+  // counter++;
 
-  strncat(qhb.heartbeatMessage, "Hello Qroma [qroma-dev-tinypico]: ", sizeof(QromaHeartbeatUpdate::heartbeatMessage) - 1);
-  strncat(qhb.heartbeatMessage, tickBuffer, sizeof(QromaHeartbeatUpdate::heartbeatMessage) - 1);
-  qhb.uptime = millis();
+  // strncat(qhb.heartbeatMessage, "Hello Qroma [qroma-dev-tinypico]: ", sizeof(QromaHeartbeatUpdate::heartbeatMessage) - 1);
+  // strncat(qhb.heartbeatMessage, tickBuffer, sizeof(QromaHeartbeatUpdate::heartbeatMessage) - 1);
+  // qhb.uptime = millis();
 
-  sendSerialPb64NewLineMessage<QromaHeartbeatUpdate, QromaHeartbeatUpdate_fields>(&qhb, &myQromaApp);
+  // sendSerialPb64NewLineMessage<QromaHeartbeatUpdate, QromaHeartbeatUpdate_fields>(&qhb, &myQromaApp);
   delay(1000);
 }
