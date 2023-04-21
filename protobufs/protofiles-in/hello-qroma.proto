@@ -11,6 +11,12 @@ message HelloQromaRequest {
   string name = 1;
 }
 
+message SetColorRequest {
+  uint32 red = 1;
+  uint32 green = 2;
+  uint32 blue = 3;
+}
+
 message HelloQromaResponse {
   string response = 1;
   uint32 callCount = 2;
