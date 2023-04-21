@@ -1,0 +1,10 @@
+{
+  "project_id": "qroma-dev-tinypico",
+  "version": "0.1.0",
+  "qromaEsp32LoaderManifests": [
+    {
+      "name": "qroma-dev-tinypico",
+      "manifestPath": "/qroma/versions/0.1.0/firmware/manifest-firmware.json"
+    }
+  ]
+}
