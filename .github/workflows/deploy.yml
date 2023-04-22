@@ -14,7 +14,6 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-22.04
-    working-directory: sites/site-www-qroma-dev-tinypico
     permissions:
       contents: write
     concurrency:
@@ -27,6 +26,7 @@ jobs:
 
       - name: Setup Node
         uses: actions/setup-node@v3
+        working-directory: sites/site-www-qroma-dev-tinypico
         with:
           node-version: '18'
           cache: npm
