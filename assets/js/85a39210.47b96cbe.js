@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunksite_www_qroma_project=self.webpackChunksite_www_qroma_project||[]).push([[6707],{2454:e=>{e.exports=JSON.parse('{"label":"facebook","permalink":"/qroma-dev-tinypico/blog/tags/facebook","allTagsPath":"/qroma-dev-tinypico/blog/tags","count":1}')}}]);
