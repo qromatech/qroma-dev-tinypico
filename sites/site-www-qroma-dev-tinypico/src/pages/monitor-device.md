@@ -10,7 +10,9 @@ import { QromaCommMonitor } from "react-qroma";
 
 
 <BrowserOnly>
+{() =>
   <QromaCommMonitor
     messageType={QromaHeartbeatUpdate}
     />
+}
 </BrowserOnly>

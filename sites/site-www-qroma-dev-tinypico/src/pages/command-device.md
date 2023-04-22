@@ -9,7 +9,9 @@ import { SetColorRequest } from "../qroma-proto/hello-qroma";
 import { QromaCommandDeviceApp } from "../qroma-app/QromaCommandDeviceApp";
 
 <BrowserOnly>
+{() =>
   <QromaCommandDeviceApp
     requestMessageType={SetColorRequest}
     />
+}
 </BrowserOnly>
