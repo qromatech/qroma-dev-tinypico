@@ -20,7 +20,7 @@ jobs:
       group: ${{ github.workflow }}-${{ github.ref }}
     defaults:
       run:
-        working-directory: ./sites/site-www-qroma-dev-tinypico
+        working-directory: sites/site-www-qroma-dev-tinypico
     steps:
       - uses: actions/checkout@v3
 
