@@ -20,7 +20,7 @@ jobs:
       group: ${{ github.workflow }}-${{ github.ref }}
     defaults:
       run:
-        working-directory: website
+        working-directory: sites/site-www-qroma-dev-tinypico
     steps:
       - uses: actions/checkout@v3
 
@@ -38,9 +38,9 @@ jobs:
         uses: actions/cache@v3
         with:
           path: ${{ steps.npm-cache.outputs.NPM_CACHE_DIR }}
-          key: ${{ runner.os }}-website-${{ hashFiles('**/package-lock.json') }}
+          key: ${{ runner.os }}-sites/site-www-qroma-dev-tinypico-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
-            ${{ runner.os }}-website-
+            ${{ runner.os }}-sites/site-www-qroma-dev-tinypico-
 
       - run: npm ci
       - run: npm run build
